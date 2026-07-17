@@ -12,7 +12,6 @@ export default function NodeFlowHome() {
       <nav className="border-b border-white/10 bg-[#0A0B14]/95 backdrop-blur-xl sticky top-0 z-50">
         <div className="max-w-6xl mx-auto px-6">
           <div className="flex items-center justify-between h-20">
-            {/* Logo */}
             <div className="flex items-center gap-3">
               <div className="w-9 h-9 bg-gradient-to-br from-indigo-500 to-violet-600 rounded-2xl flex items-center justify-center">
                 <span className="text-white font-bold text-2xl tracking-[-2px]">N</span>
@@ -20,7 +19,6 @@ export default function NodeFlowHome() {
               <span className="font-semibold text-2xl tracking-tight">NodeFlow</span>
             </div>
 
-            {/* Desktop Menu */}
             <div className="hidden md:flex items-center gap-9 text-sm">
               <Link href="#features" className="text-zinc-400 hover:text-white transition">Features</Link>
               <Link href="#how" className="text-zinc-400 hover:text-white transition">How it works</Link>
@@ -32,7 +30,6 @@ export default function NodeFlowHome() {
               </button>
             </div>
 
-            {/* Mobile Hamburger */}
             <button 
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="md:hidden w-10 h-10 flex items-center justify-center"
@@ -44,7 +41,6 @@ export default function NodeFlowHome() {
           </div>
         </div>
 
-        {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="md:hidden border-t border-white/10 bg-[#0A0B14] px-6 py-6 space-y-4 text-sm">
             <Link href="#features" className="block py-2 text-zinc-400 hover:text-white" onClick={() => setIsMenuOpen(false)}>Features</Link>
@@ -59,32 +55,45 @@ export default function NodeFlowHome() {
         )}
       </nav>
 
-      {/* Hero Section */}
-      <section className="max-w-5xl mx-auto px-6 pt-16 md:pt-24 pb-16 text-center">
+      {/* Hero Section dengan Background Cantik */}
+      <section className="relative max-w-5xl mx-auto px-6 pt-16 md:pt-24 pb-20 text-center overflow-hidden">
+        {/* Background Gradient Cantik */}
+        <div className="absolute inset-0 -z-10">
+          <div className="absolute top-[-30%] left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-gradient-to-br from-indigo-500/20 via-violet-500/10 to-transparent rounded-full blur-3xl" />
+          <div className="absolute bottom-[-20%] right-[-10%] w-[500px] h-[400px] bg-gradient-to-br from-blue-500/10 to-transparent rounded-full blur-3xl" />
+        </div>
+
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-sm mb-8">
           <div className="w-2 h-2 bg-indigo-400 rounded-full animate-pulse" />
           Trusted by validators worldwide
         </div>
 
-        <h1 className="text-5xl md:text-7xl font-semibold tracking-tighter leading-[1.05] mb-6">
-          The easiest way<br />to run validators
+        {/* Headline dengan Font Lebih Menarik (Gradient) */}
+        <h1 className="text-5xl md:text-7xl font-semibold tracking-[-2.5px] leading-[1.05] mb-6">
+          <span className="bg-gradient-to-r from-white via-white to-white/90 bg-clip-text text-transparent">
+            The easiest way
+          </span>
+          <br />
+          <span className="bg-gradient-to-r from-indigo-400 via-violet-400 to-blue-400 bg-clip-text text-transparent">
+            to run validators
+          </span>
         </h1>
         
         <p className="max-w-lg mx-auto text-lg md:text-xl text-zinc-400 mb-10">
           Deploy, monitor, and manage blockchain validators in minutes.<br />
-          No servers to manage. No infrastructure headaches.
+          No servers. No infrastructure headaches.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <button 
             onClick={() => alert('We will build authentication & dashboard next!')}
-            className="px-8 py-4 bg-white text-[#0A0B14] rounded-3xl text-lg font-semibold hover:bg-zinc-100 active:scale-[0.985] transition"
+            className="px-9 py-4 bg-white text-[#0A0B14] rounded-3xl text-lg font-semibold hover:bg-zinc-100 active:scale-[0.985] transition"
           >
             Start Deploying Free
           </button>
           <a 
             href="#how"
-            className="px-8 py-4 border border-white/20 hover:bg-white/5 rounded-3xl text-lg font-medium transition flex items-center justify-center"
+            className="px-9 py-4 border border-white/20 hover:bg-white/5 rounded-3xl text-lg font-medium transition flex items-center justify-center"
           >
             See how it works
           </a>
@@ -101,15 +110,15 @@ export default function NodeFlowHome() {
           {[
             {
               title: "One-Click Deployment",
-              desc: "Instantly spin up optimized validator infrastructure on Solana and other networks. No manual server setup required.",
+              desc: "Instantly spin up optimized validator infrastructure on Solana and other networks. No manual setup needed.",
             },
             {
               title: "Real-time Performance Dashboard",
-              desc: "Beautiful live dashboard showing uptime, voting status, stake weight, and rewards — all in one place.",
+              desc: "Beautiful live dashboard showing uptime, voting status, stake performance, and rewards — updated in real time.",
             },
             {
               title: "Automated Failover & Recovery",
-              desc: "Continuous health monitoring. If your node goes down, we automatically restart or migrate it to keep you online.",
+              desc: "Continuous health checks. If your node fails, we automatically restart or migrate it to keep you online.",
             },
             {
               title: "Stake & Reward Analytics",
@@ -137,8 +146,8 @@ export default function NodeFlowHome() {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               { number: "01", title: "Create your account", desc: "Sign up with email or connect your wallet in seconds." },
-              { number: "02", title: "Choose your network", desc: "Select Solana or other supported chains and configure your validator." },
-              { number: "03", title: "Deploy & monitor", desc: "One click to launch. Track performance and rewards from your dashboard." },
+              { number: "02", title: "Choose your network", desc: "Select Solana or other supported chains and set your preferences." },
+              { number: "03", title: "Deploy & monitor", desc: "One click to launch. Track everything from your dashboard." },
             ].map((step, index) => (
               <div key={index} className="text-center md:text-left">
                 <div className="text-sm font-mono tracking-[3px] text-indigo-400 mb-3">{step.number}</div>
@@ -153,9 +162,9 @@ export default function NodeFlowHome() {
       {/* Final CTA */}
       <section className="border-t border-white/10 py-20 text-center px-6">
         <h2 className="text-4xl md:text-5xl font-semibold tracking-tight mb-4">Ready to start validating?</h2>
-        <p className="text-zinc-400 mb-8 max-w-md mx-auto">Join validators who are already running infrastructure the smart way.</p>
+        <p className="text-zinc-400 mb-8 max-w-md mx-auto">Join validators who already run infrastructure the smart way.</p>
         <button 
-          onClick={() => alert('Authentication & full dashboard coming in the next step!')}
+          onClick={() => alert('Authentication & full dashboard coming next!')}
           className="px-10 py-4 bg-white text-[#0A0B14] rounded-3xl text-lg font-semibold hover:bg-zinc-100 transition"
         >
           Deploy Your First Validator
@@ -167,4 +176,4 @@ export default function NodeFlowHome() {
       </footer>
     </main>
   )
-}
+          }
