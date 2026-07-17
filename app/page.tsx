@@ -27,7 +27,7 @@ export default function NodeFlowHome() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="flex items-center justify-between h-20">
             
-            {/* Logo dengan Font Sambung */}
+            {/* Logo */}
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 via-violet-600 to-blue-500 rounded-2xl flex items-center justify-center shadow-lg">
                 <span className="text-white font-bold text-3xl tracking-[-3px] drop-shadow-sm">N</span>
@@ -41,23 +41,21 @@ export default function NodeFlowHome() {
             <div className="hidden md:flex items-center gap-8 text-sm">
               <Link href="#features" className={`${isDark ? 'text-zinc-400 hover:text-white' : 'text-zinc-600 hover:text-zinc-900'} transition`}>Features</Link>
               <Link href="#how" className={`${isDark ? 'text-zinc-400 hover:text-white' : 'text-zinc-600 hover:text-zinc-900'} transition`}>How it works</Link>
+              <Link href="/login" className={`${isDark ? 'text-zinc-400 hover:text-white' : 'text-zinc-600 hover:text-zinc-900'} transition`}>Login</Link>
 
-              <button 
-                onClick={toggleTheme}
-                className={`w-9 h-9 flex items-center justify-center rounded-xl border transition ${isDark ? 'border-white/20 hover:bg-white/5' : 'border-zinc-300 hover:bg-zinc-100'}`}
-              >
+              <button onClick={toggleTheme} className={`w-9 h-9 flex items-center justify-center rounded-xl border transition ${isDark ? 'border-white/20 hover:bg-white/5' : 'border-zinc-300 hover:bg-zinc-100'}`}>
                 {isDark ? '☀️' : '🌙'}
               </button>
 
-              <button 
-                onClick={() => alert('Authentication & Dashboard coming next!')}
-                className="px-6 py-2.5 bg-white text-[#0A0B14] rounded-2xl text-sm font-semibold hover:bg-zinc-100 active:scale-[0.985] transition shadow-sm"
+              <Link 
+                href="/login"
+                className="px-6 py-2.5 bg-white text-[#0A0B14] rounded-2xl text-sm font-semibold hover:bg-zinc-100 transition shadow-sm"
               >
                 Deploy Validator
-              </button>
+              </Link>
             </div>
 
-            {/* Mobile Controls */}
+            {/* Mobile Menu Button */}
             <div className="md:hidden flex items-center gap-2">
               <button onClick={toggleTheme} className={`w-9 h-9 flex items-center justify-center rounded-xl border transition ${isDark ? 'border-white/20' : 'border-zinc-300'}`}>
                 {isDark ? '☀️' : '🌙'}
@@ -76,12 +74,14 @@ export default function NodeFlowHome() {
           <div className={`md:hidden border-t px-6 py-6 space-y-4 text-sm ${isDark ? 'bg-[#0A0B14] border-white/10' : 'bg-white border-zinc-200'}`}>
             <Link href="#features" className="block py-2" onClick={() => setIsMenuOpen(false)}>Features</Link>
             <Link href="#how" className="block py-2" onClick={() => setIsMenuOpen(false)}>How it works</Link>
-            <button 
-              onClick={() => { setIsMenuOpen(false); alert('Authentication & Dashboard coming next!') }}
-              className="w-full mt-3 px-6 py-3 bg-white text-[#0A0B14] rounded-2xl font-semibold shadow-sm"
+            <Link href="/login" className="block py-2" onClick={() => setIsMenuOpen(false)}>Login</Link>
+            <Link href="/register" className="block py-2" onClick={() => setIsMenuOpen(false)}>Register</Link>
+            <Link 
+              href="/login"
+              className="block w-full text-center mt-2 px-6 py-3 bg-white text-[#0A0B14] rounded-2xl font-semibold"
             >
               Deploy Validator
-            </button>
+            </Link>
           </div>
         )}
       </nav>
@@ -120,22 +120,21 @@ export default function NodeFlowHome() {
         </div>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button 
-            onClick={() => alert('We will build authentication & dashboard next!')}
-            className="px-9 py-4 bg-white text-[#0A0B14] rounded-3xl text-lg font-semibold hover:bg-zinc-100 active:scale-[0.985] transition shadow-sm"
+          <Link 
+            href="/register"
+            className="px-9 py-4 bg-white text-[#0A0B14] rounded-3xl text-lg font-semibold hover:bg-zinc-100 active:scale-[0.985] transition text-center"
           >
             Start Deploying Free
-          </button>
-          <a 
-            href="#how"
-            className={`px-9 py-4 border rounded-3xl text-lg font-medium transition flex items-center justify-center ${isDark ? 'border-white/20 hover:bg-white/5' : 'border-zinc-300 hover:bg-zinc-100'}`}
-          >
+          </Link>
+          <a href="#how" className={`px-9 py-4 border rounded-3xl text-lg font-medium transition flex items-center justify-center ${isDark ? 'border-white/20 hover:bg-white/5' : 'border-zinc-300 hover:bg-zinc-100'}`}>
             See how it works
           </a>
         </div>
       </section>
 
-      {/* Features */}
+      {/* Features & How it works section (sama seperti sebelumnya) */}
+      {/* ... (saya singkat agar tidak terlalu panjang) */}
+
       <section id="features" className="max-w-6xl mx-auto px-6 pb-20">
         <div className="text-center mb-14">
           <h2 className={`text-4xl md:text-5xl font-semibold tracking-tight ${isDark ? 'text-white' : 'text-zinc-900'}`}>
@@ -158,7 +157,6 @@ export default function NodeFlowHome() {
         </div>
       </section>
 
-      {/* How it Works */}
       <section id="how" className={`border-t py-20 ${isDark ? 'border-white/10 bg-white/[0.015]' : 'border-zinc-200 bg-zinc-50'}`}>
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-14">
@@ -181,21 +179,9 @@ export default function NodeFlowHome() {
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className={`border-t py-20 text-center px-6 ${isDark ? 'border-white/10' : 'border-zinc-200'}`}>
-        <h2 className={`text-4xl md:text-5xl font-semibold tracking-tight mb-4 ${isDark ? 'text-white' : 'text-zinc-900'}`}>Ready to start validating?</h2>
-        <p className={`mb-8 max-w-md mx-auto ${isDark ? 'text-zinc-400' : 'text-zinc-600'}`}>Join validators who already run infrastructure the smart way.</p>
-        <button 
-          onClick={() => alert('Authentication & full dashboard coming next!')}
-          className="px-10 py-4 bg-white text-[#0A0B14] rounded-3xl text-lg font-semibold hover:bg-zinc-100 transition shadow-sm"
-        >
-          Deploy Your First Validator
-        </button>
-      </section>
-
       <footer className={`border-t py-8 text-center text-sm ${isDark ? 'border-white/10 text-zinc-500' : 'border-zinc-200 text-zinc-500'}`}>
         NodeFlow • Validator infrastructure, simplified.
       </footer>
     </main>
   )
-        }
+}
