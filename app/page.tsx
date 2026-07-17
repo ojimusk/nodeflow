@@ -7,11 +7,9 @@ export default function NodeFlowHome() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isDark, setIsDark] = useState(true)
 
-  // Toggle Dark/Light
   const toggleTheme = () => {
     const newTheme = !isDark
     setIsDark(newTheme)
-    
     if (newTheme) {
       document.documentElement.classList.add('dark')
       document.documentElement.classList.remove('light')
@@ -28,19 +26,22 @@ export default function NodeFlowHome() {
       <nav className={`border-b sticky top-0 z-50 backdrop-blur-xl transition-colors ${isDark ? 'bg-[#0A0B14]/95 border-white/10' : 'bg-white/95 border-zinc-200'}`}>
         <div className="max-w-6xl mx-auto px-6">
           <div className="flex items-center justify-between h-20">
-            {/* Logo */}
+            
+            {/* Logo - Lebih Unik & Stylish */}
             <div className="flex items-center gap-3">
-              <div className="w-9 h-9 bg-gradient-to-br from-indigo-500 to-violet-600 rounded-2xl flex items-center justify-center">
-                <span className="text-white font-bold text-2xl tracking-[-2px]">N</span>
+              <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 via-violet-600 to-blue-500 rounded-2xl flex items-center justify-center shadow-lg">
+                <span className="text-white font-bold text-3xl tracking-[-3px] drop-shadow-sm">N</span>
               </div>
-              <span className={`font-semibold text-2xl tracking-tight ${isDark ? 'text-white' : 'text-zinc-900'}`}>NodeFlow</span>
+              <span className={`font-semibold text-3xl tracking-[-1.5px] ${isDark ? 'text-white' : 'text-zinc-900'}`}>
+                NodeFlow
+              </span>
             </div>
 
             {/* Desktop Menu */}
             <div className="hidden md:flex items-center gap-8 text-sm">
               <Link href="#features" className={`${isDark ? 'text-zinc-400 hover:text-white' : 'text-zinc-600 hover:text-zinc-900'} transition`}>Features</Link>
               <Link href="#how" className={`${isDark ? 'text-zinc-400 hover:text-white' : 'text-zinc-600 hover:text-zinc-900'} transition`}>How it works</Link>
-              
+
               {/* Theme Toggle */}
               <button 
                 onClick={toggleTheme}
@@ -51,13 +52,13 @@ export default function NodeFlowHome() {
 
               <button 
                 onClick={() => alert('Authentication & Dashboard coming next!')}
-                className="px-6 py-2.5 bg-white text-[#0A0B14] rounded-2xl text-sm font-semibold hover:bg-zinc-100 active:scale-[0.985] transition"
+                className="px-6 py-2.5 bg-white text-[#0A0B14] rounded-2xl text-sm font-semibold hover:bg-zinc-100 active:scale-[0.985] transition shadow-sm"
               >
                 Deploy Validator
               </button>
             </div>
 
-            {/* Mobile Hamburger + Theme Toggle */}
+            {/* Mobile Controls */}
             <div className="md:hidden flex items-center gap-2">
               <button 
                 onClick={toggleTheme}
@@ -81,7 +82,7 @@ export default function NodeFlowHome() {
             <Link href="#how" className="block py-2" onClick={() => setIsMenuOpen(false)}>How it works</Link>
             <button 
               onClick={() => { setIsMenuOpen(false); alert('Authentication & Dashboard coming next!') }}
-              className="w-full mt-2 px-6 py-3 bg-white text-[#0A0B14] rounded-2xl font-semibold"
+              className="w-full mt-3 px-6 py-3 bg-white text-[#0A0B14] rounded-2xl font-semibold shadow-sm"
             >
               Deploy Validator
             </button>
@@ -91,7 +92,6 @@ export default function NodeFlowHome() {
 
       {/* Hero Section */}
       <section className="relative max-w-5xl mx-auto px-6 pt-16 md:pt-24 pb-16 text-center overflow-hidden">
-        {/* Background Gradient */}
         <div className="absolute inset-0 -z-10">
           <div className="absolute top-[-30%] left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-gradient-to-br from-indigo-500/20 via-violet-500/10 to-transparent rounded-full blur-3xl" />
         </div>
@@ -111,7 +111,7 @@ export default function NodeFlowHome() {
           </span>
         </h1>
 
-        {/* Running Text (Marquee) - Dirangkum & Menarik */}
+        {/* Running Text (Marquee) */}
         <div className="overflow-hidden whitespace-nowrap mb-10">
           <div className="inline-flex animate-marquee text-base md:text-lg">
             <span className="bg-gradient-to-r from-indigo-400 via-violet-400 to-blue-400 bg-clip-text text-transparent font-medium mx-4">
@@ -126,7 +126,7 @@ export default function NodeFlowHome() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <button 
             onClick={() => alert('We will build authentication & dashboard next!')}
-            className="px-9 py-4 bg-white text-[#0A0B14] rounded-3xl text-lg font-semibold hover:bg-zinc-100 active:scale-[0.985] transition"
+            className="px-9 py-4 bg-white text-[#0A0B14] rounded-3xl text-lg font-semibold hover:bg-zinc-100 active:scale-[0.985] transition shadow-sm"
           >
             Start Deploying Free
           </button>
@@ -139,7 +139,7 @@ export default function NodeFlowHome() {
         </div>
       </section>
 
-      {/* Features Section */}
+      {/* Features */}
       <section id="features" className="max-w-6xl mx-auto px-6 pb-20">
         <div className="text-center mb-14">
           <h2 className={`text-4xl md:text-5xl font-semibold tracking-tight ${isDark ? 'text-white' : 'text-zinc-900'}`}>
@@ -191,7 +191,7 @@ export default function NodeFlowHome() {
         <p className={`mb-8 max-w-md mx-auto ${isDark ? 'text-zinc-400' : 'text-zinc-600'}`}>Join validators who already run infrastructure the smart way.</p>
         <button 
           onClick={() => alert('Authentication & full dashboard coming next!')}
-          className="px-10 py-4 bg-white text-[#0A0B14] rounded-3xl text-lg font-semibold hover:bg-zinc-100 transition"
+          className="px-10 py-4 bg-white text-[#0A0B14] rounded-3xl text-lg font-semibold hover:bg-zinc-100 transition shadow-sm"
         >
           Deploy Your First Validator
         </button>
@@ -202,4 +202,4 @@ export default function NodeFlowHome() {
       </footer>
     </main>
   )
-}
+            }
